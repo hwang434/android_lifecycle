@@ -3,15 +3,9 @@ package com.goodee.test
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import com.goodee.test.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
-import okhttp3.Dispatcher
-import retrofit2.HttpException
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -20,49 +14,53 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d(TAG,"MainActivity - onCreate() called")
         super.onCreate(savedInstanceState)
+        // savedInstanceState 이전 액티비티에서 담아준 정보
+        Log.d(TAG,"MainActivity - onCreate(savedInstanceState = ${savedInstanceState}) called")
+        // 화면 xml 파일과 액티비티를 묶어주는 데이터 바인딩
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        // 화면에 이벤트를 등록
         binding.startNewActBtn.setOnClickListener {
             startSecondActivity()
         }
     }
 
     override fun onStart() {
-        Log.d(TAG,"MainActivity - onStart() called")
         super.onStart()
+        Log.d(TAG,"MainActivity - onStart() called")
     }
 
     override fun onResume() {
-        Log.d(TAG,"MainActivity - onResume() called")
         super.onResume()
+        Log.d(TAG,"MainActivity - onResume() called")
     }
 
     override fun onPause() {
-        Log.d(TAG,"MainActivity - onPause() called")
         super.onPause()
+        Log.d(TAG,"MainActivity - onPause() called")
     }
 
     override fun onStop() {
-        Log.d(TAG,"MainActivity - onStop() called")
         super.onStop()
+        Log.d(TAG,"MainActivity - onStop() called")
     }
 
 
     override fun onRestart() {
-        Log.d(TAG,"MainActivity - onRestart() called")
         super.onRestart()
+        Log.d(TAG,"MainActivity - onRestart() called")
     }
 
     override fun onDestroy() {
-        Log.d(TAG,"MainActivity - onDestroy() called")
         super.onDestroy()
+        Log.d(TAG,"MainActivity - onDestroy() called")
     }
 
     private fun startSecondActivity() {
         Log.d(TAG,"MainActivity - startSecondActivity() called")
         val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra("MainActivity Info", "메인 액티비티에서 담아서 보내준 정보")
         startActivity(intent)
     }
 }
