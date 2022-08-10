@@ -3,15 +3,9 @@ package com.goodee.test
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.lifecycleScope
 import com.goodee.test.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
-import okhttp3.Dispatcher
-import retrofit2.HttpException
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     companion object {
