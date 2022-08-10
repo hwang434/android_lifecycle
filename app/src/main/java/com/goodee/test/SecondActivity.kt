@@ -16,9 +16,6 @@ class SecondActivity : AppCompatActivity() {
         Log.d(TAG,"SecondActivity - onCreate() called")
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
-        binding.startNewActBtn.setOnClickListener {
-
-        }
     }
 
     override fun onStart() {
