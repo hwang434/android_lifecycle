@@ -5,47 +5,48 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import com.goodee.test.databinding.ActivityMainBinding
+import com.goodee.test.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
     companion object {
         private const val TAG: String = "로그"
     }
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivitySecondBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d(TAG,"SecondActivity - onCreate() called")
         super.onCreate(savedInstanceState)
+        Log.d(TAG,"SecondActivity - onCreate(savedInstanceState : ${savedInstanceState?.get("MainActivity Info")}) called")
         binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
     }
 
     override fun onStart() {
-        Log.d(TAG,"SecondActivity - onStart() called")
         super.onStart()
+        Log.d(TAG,"SecondActivity - onStart() called")
     }
 
     override fun onResume() {
-        Log.d(TAG,"SecondActivity - onResume() called")
         super.onResume()
+        Log.d(TAG,"SecondActivity - onResume() called")
     }
 
     override fun onPause() {
-        Log.d(TAG,"SecondActivity - onPause() called")
         super.onPause()
+        Log.d(TAG,"SecondActivity - onPause() called")
     }
 
     override fun onStop() {
-        Log.d(TAG,"SecondActivity - onStop() called")
         super.onStop()
+        Log.d(TAG,"SecondActivity - onStop() called")
     }
 
 
     override fun onRestart() {
-        Log.d(TAG,"SecondActivity - onRestart() called")
         super.onRestart()
+        Log.d(TAG,"SecondActivity - onRestart() called")
     }
 
     override fun onDestroy() {
-        Log.d(TAG,"SecondActivity - onDestroy() called")
         super.onDestroy()
+        Log.d(TAG,"SecondActivity - onDestroy() called")
     }
 }
