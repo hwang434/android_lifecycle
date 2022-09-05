@@ -44,6 +44,16 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d(TAG,"HomeFragment - onViewCreated() called")
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        Log.d(TAG,"HomeFragment - onViewStateRestored() called")
+        super.onViewStateRestored(savedInstanceState)
+    }
+
     override fun onStart() {
         Log.d(TAG,"HomeFragment - onStart() called")
         super.onStart()
@@ -62,6 +72,11 @@ class HomeFragment : Fragment() {
     override fun onStop() {
         Log.d(TAG,"HomeFragment - onStop() called")
         super.onStop()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.d(TAG,"HomeFragment - onSaveInstanceState() called")
+        super.onSaveInstanceState(outState)
     }
 
     override fun onDestroyView() {

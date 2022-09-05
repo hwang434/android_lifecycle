@@ -40,6 +40,16 @@ class SecondFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d(TAG,"SecondFragment - onViewCreated() called")
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        Log.d(TAG,"SecondFragment - onViewStateRestored() called")
+        super.onViewStateRestored(savedInstanceState)
+    }
+
     override fun onStart() {
         Log.d(TAG,"SecondFragment - onStart() called")
         super.onStart()
@@ -58,6 +68,11 @@ class SecondFragment : Fragment() {
     override fun onStop() {
         Log.d(TAG,"SecondFragment - onStop() called")
         super.onStop()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.d(TAG,"SecondFragment - onSaveInstanceState() called")
+        super.onSaveInstanceState(outState)
     }
 
     override fun onDestroyView() {
