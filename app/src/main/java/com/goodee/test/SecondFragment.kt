@@ -69,4 +69,9 @@ class SecondFragment : Fragment() {
         Log.d(TAG,"SecondFragment - onDestroy() called")
         super.onDestroy()
     }
+
+    override fun onDetach() {
+        Log.d(TAG,"SecondFragment - onDetach() called")
+        super.onDetach()
+    }
 }

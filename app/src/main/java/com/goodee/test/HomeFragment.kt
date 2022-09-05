@@ -73,4 +73,9 @@ class HomeFragment : Fragment() {
         Log.d(TAG,"HomeFragment - onDestroy() called")
         super.onDestroy()
     }
+
+    override fun onDetach() {
+        Log.d(TAG,"HomeFragment - onDetach() called")
+        super.onDetach()
+    }
 }
