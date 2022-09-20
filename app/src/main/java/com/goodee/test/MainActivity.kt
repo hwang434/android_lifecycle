@@ -19,11 +19,6 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG,"MainActivity - onCreate(savedInstanceState = ${savedInstanceState}) called")
         // 화면 xml 파일과 액티비티를 묶어주는 데이터 바인딩
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        // 화면에 이벤트를 등록
-        binding.startNewActBtn.setOnClickListener {
-            startSecondActivity()
-        }
     }
 
     override fun onStart() {
